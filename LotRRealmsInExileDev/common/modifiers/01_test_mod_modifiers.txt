@@ -1,0 +1,21 @@
+﻿#Modifiers for "test mod 01" (By Killerham)
+
+
+########
+# Character Modifiers
+########
+
+steward_well_fed_troops_modifier = {
+	icon = martial_positive
+	men_at_arms_maintenance = -0.025
+}
+
+#######
+# County Modifiers
+#######
+
+
+steward_appreciated_peasantry_modifier = {
+	icon = county_modifier_opinion_positive
+	county_opinion_add = 10
+}

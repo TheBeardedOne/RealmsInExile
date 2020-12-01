@@ -1,0 +1,13 @@
+﻿l_english:
+ 
+ # Bountiful Harvest by M. Jeremy Boggs
+ stewardship_domain.1001bb.t:0 "Bountiful Harvest"
+ stewardship_domain.1001bb.desc:0 "The harvest has begun in [capital.GetNameNoTier] and the peasants are busy working. This year the harvest will be exceptional and an enormous surplus is expected!\n\nWhat should be done with the extra food?"
+ stewardship_domain.1001bb.a:0 "Hold a special feast for the peasants!"
+ stewardship_domain.1001bb.a.tt:0 "They will remember my generosity."
+ stewardship_domain.1001bb.b:0 "Save it for the troops."
+ stewardship_domain.1001bb.b.tt:0 "Extra stores will reduce cost and keep the men happy."
+ stewardship_domain.1001bb.c:0 "Export the extras to other nearby lands."
+ stewardship_domain.1001bb.c.tt:0 "The harvest wasn't so great everywhere..."
+ stewardship_domain.1001bb.d:0 "I think I can put this to good use..."
+ stewardship_domain.1001bb.d.tt:0 "Reinvesting the harvest is best for long term growth."

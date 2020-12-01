@@ -1,0 +1,141 @@
+namespace = stewardship_domain
+
+# Stewardship (Domain) Events:
+	# 1001bb		: Bountiful Harvest, by Jeremy Boggs
+
+#################
+# Bountiful harvest
+# by M. Jeremy Boggs (Killerham)
+# 1001bb
+#################	
+
+stewardship_domain.1001bb = {
+
+	type = character_event
+	title = stewardship_domain.1001bb.t
+	desc = stewardship_domain.1001bb.desc
+	theme = stewardship_domain_focus
+	
+	right_portrait = {
+		character = scope:steward
+	}
+	
+	trigger = {
+		NOT = { has_character_flag = had_stewardship_domain_1001bb_event }
+	}
+	
+	weight_multiplier = {
+		base = 1
+		upweight_for_focus_modifier = { FOCUS = stewardship_domain_focus }
+	}
+	
+	immediate = {
+		add_character_flag = {
+			flag = had_stewardship_domain_1001bb_event
+			days = 3650
+		}		
+		add_character_flag = {
+			flag = had_recent_lifestyle_ongoing_event
+			years = ongoing_lifestyle_event_delay
+		}
+		
+		capital_county = {
+			save_scope_as = capital
+		}
+		
+		#cp means council position? 
+		if = {
+			limit = {
+				exists = cp:councillor_steward
+			}
+			cp:councillor_steward = {
+				save_scope_as = steward
+			}
+		}
+	}	
+
+	
+	##Option A
+	option = {
+		name = stewardship_domain.1001bb.a
+		custom_tooltip = stewardship_domain.1001bb.a.tt
+		
+		stress_impact = {
+			greedy = minor_stress_impact_gain
+			generous = minor_stress_impact_loss
+		}
+		
+		scope:capital = {
+			add_county_modifier = {
+				modifier = steward_appreciated_peasantry_modifier
+				years = 5
+			}
+		}
+		
+		ai_chance = {
+			base = 33
+			ai_value_modifier = {
+				ai_generous = 0.5
+				ai_greedy = -0.5
+			}
+		}
+	}
+	
+	##Option B
+	option = {
+		name = stewardship_domain.1001bb.b
+		custom_tooltip = stewardship_domain.1001bb.b.tt
+		add_character_modifier = {
+			modifier = steward_well_fed_troops_modifier
+			years = 10
+		}
+		
+		ai_chance = {
+			base = 33
+		}
+	}
+	
+	##Option C
+	option = {
+		name = stewardship_domain.1001bb.c
+		custom_tooltip = stewardship_domain.1001bb.c.tt
+		
+		stress_impact = {
+			greedy = minor_stress_impact_loss
+		}
+		
+		add_gold = minor_gold_value
+		
+		ai_chance = {
+			base = 33
+			ai_value_modifier = 
+			{
+				ai_greedy = 0.25
+			}
+		}		
+	}
+	
+	##Option D
+	option = {
+		name = stewardship_domain.1001bb.d
+		custom_tooltip =  stewardship_domain.1001bb.d.tt
+		
+		trigger = {			
+			root = { has_trait = overseer }
+		}
+		
+		trait = overseer
+		
+		scope:capital = 
+		{
+			add_county_modifier = {
+				modifier = reinvested_in_province_modifier
+				years = 10
+			}
+		}
+
+		ai_chance = {
+			base = 100
+		}
+	}
+}
